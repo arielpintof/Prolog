@@ -7,6 +7,7 @@ public class Node
 {
     public IClause Clause { get; set; }
     public List<Node> children;
+    
 
     public Node()
     {
@@ -15,6 +16,7 @@ public class Node
     public Node(IClause clause)
     {
         Clause = clause;
+        children = new List<Node>();
     }
 
     public Node(IClause clause, List<Node> children)
@@ -31,6 +33,15 @@ public class Node
             children = new List<Node>();
         }
         children.Add(t);*/
+    }
+
+    public bool IsLeaf ()
+    {
+        return Clause switch
+        {
+            Rule => false,
+            _ => true
+        };
     }
 }
 
