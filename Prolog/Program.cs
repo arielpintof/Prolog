@@ -44,7 +44,8 @@ var goal = new Functor("criminal", "robert");
 
 Console.WriteLine("-----------------------------");
 var tree = new Tree(new Node(), rules, facts, goal);
-tree.InitGoal();
+tree.InitFromGoal();
+tree.InitRulesAndFacts(tree.root.children);
 var a = tree.root.children;
 
 /*foreach (var r in a)

@@ -25,14 +25,19 @@ public class Tree
 
     }
 
-    public void InitGoal()
+    public void initFromFacts()
+    {
+        
+    }
+    public void InitFromGoal()
     {
         var goalHead = goal.Head().Name();
         var children = Methods.FindHead(clauses, goalHead);
         root = new Node(goal);
         Methods.AddChildrenNodes(root, children);
         Console.WriteLine("Functor Goal Head : " + goalHead);
-        InitRulesAndFacts(root.children);
+        
+        //InitRulesAndFacts(root.children);
     }
 
     public void InitRulesAndFacts(List<Node> nodes)
