@@ -1,4 +1,5 @@
 using System.Xml;
+using Prolog.Tree;
 using PrologInterpreter.Clause;
 using PrologInterpreter.Functor;
 using PrologInterpreter.Term;
@@ -24,11 +25,7 @@ public class Tree
         this.clauses = Methods.Concat(rules, functors);
 
     }
-
-    public void initFromFacts()
-    {
-        
-    }
+    
     public void InitFromGoal()
     {
         var goalHead = goal.Head().Name();
@@ -60,7 +57,7 @@ public class Tree
                 Console.WriteLine(d);
             }*/
             
-            InitRulesAndFacts(node.children);
+            InitRulesAndFacts(node.Children);
         }
         
         

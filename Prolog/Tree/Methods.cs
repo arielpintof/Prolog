@@ -1,3 +1,4 @@
+using Prolog.Tree;
 using PrologInterpreter.Clause;
 using PrologInterpreter.Functor;
 

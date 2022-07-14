@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using Prolog.Tree;
 using PrologInterpreter.Clause;
 using PrologInterpreter.Functor;
 using PrologInterpreter.Tree;
@@ -26,6 +27,7 @@ var rules = new List<IClause> { rule1, rule2, rule3};
 var facts = new List<IClause> { father, mother};
 var goal = new Functor("son", "bill, A");
 */
+
 var sells = new Functor("robert", "ballistic", "cuba");
 var missile = new Functor("ballistic");
 var american = new Functor("american", "robert");
@@ -45,8 +47,8 @@ var goal = new Functor("criminal", "robert");
 Console.WriteLine("-----------------------------");
 var tree = new Tree(new Node(), rules, facts, goal);
 tree.InitFromGoal();
-tree.InitRulesAndFacts(tree.root.children);
-var a = tree.root.children;
+tree.InitRulesAndFacts(tree.root.Children);
+var a = tree.root.Children;
 
 /*foreach (var r in a)
 {

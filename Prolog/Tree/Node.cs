@@ -1,33 +1,31 @@
 using PrologInterpreter.Clause;
-using PrologInterpreter.Functor;
 
-namespace PrologInterpreter.Tree;
+namespace Prolog.Tree;
 
 public class Node
 {
     public IClause Clause { get; set; }
-    public List<Node> children;
+    public readonly List<Node> Children;
     
-
     public Node()
     {
-        children = new List<Node>();
+        Children = new List<Node>();
     }
     public Node(IClause clause)
     {
         Clause = clause;
-        children = new List<Node>();
+        Children = new List<Node>();
     }
 
     public Node(IClause clause, List<Node> children)
     {
         Clause = clause;
-        this.children = children;
+        this.Children = children;
     }
 
     public void AddChild(Node c)
     {
-        children.Add(c);
+        Children.Add(c);
         /*if (children == null)
         {
             children = new List<Node>();
